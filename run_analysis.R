@@ -64,6 +64,8 @@ activity_labels[,2]=gsub("_","",tolower(as.character(activity_labels[,2])))
 
 yPart[,1]=activity_labels[yPart[,1],2]
 
+#Then we got cleaned data by combine 3 parts all.
+
 cleaned_data<-cbind(xPart,sPart,yPart)
 
 write.table(cleaned_data,"tidy_data.txt", row.name=FALSE)
@@ -88,27 +90,16 @@ write.table(cleaned_data, "tidy_named_data.txt", row.name=FALSE)
 #5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
 
 
+#exclude columns of activity and subject in the cleaned_data
+
+exColumn=which(names(cleaned_data %in% c("activity","subject"))
 
 
+#use aggregate to clean the data
 
+tidyMeans<-aggregate(cleaned_data[,c(1:68)], by=list(factor(cleaned_data$subject), factor(cleaned_data$activity)),mean)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+write.table(tidyMeans, "tidyMeans_data.txt", row.name=FALSE)
 
 
 
