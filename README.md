@@ -13,8 +13,15 @@ Steps of cleaning data
 
 Methods
 -----------
-unzip the raw data and read data use read.table() command, assign names to data, and use rbind() and cbind() to combine them and devide them into parts. Also, by using gsub() command to replace or delete names of the data. After I combined data I saved one txt file, and then after I replace and delete variable names, I saved another txt file.
+Unzip the raw data and read data use read.table() command, assign names to data, and use rbind() and cbind() to combine them and devide them into parts. Also, by using gsub() command to replace or delete names of the data. After I combined data I saved one txt file, the first tidy data set file called tidy named data(cleaned variable names in it) and then after create independent tidy data set with average of each variable for each activity and each subject I saved tidyMeans data.txt file.
 
+Script information
+------------
+* run_analysis.R is codes run commands and get tidy data.
+* README.md  is the instruction of the project.
+* tidyMeans data.txt is tidy data created in procedure 5.(This is what we want in procedure 5)
+* codebook contains variables, transformation method, information about the data.
+* tidy named data.txt is the first tidy data created. 
 Summary
 ----------
 The code book will talks about variables, data, and transformation work.
